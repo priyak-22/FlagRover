@@ -1,0 +1,73 @@
+/* Shared navigation used by the Home, About, and Contact pages. */
+.site-header {
+    width: min(1440px, 100%);
+    min-height: 68px;
+    margin-inline: auto;
+    padding: .9rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(148, 163, 184, .17);
+    box-shadow: none;
+    position: relative;
+    z-index: 5;
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+}
+
+.site-brand img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.site-brand > span > span { color: #38bdf8; }
+
+.site-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.site-links a {
+    position: relative;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+
+.site-links a:hover,
+.site-links a[aria-current="page"] { color: #f8fafc; }
+
+.site-links a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1.35rem;
+    left: 0;
+    height: 2px;
+    background: #38bdf8;
+}
+
+@media (max-width: 560px) {
+    .site-header { min-height: 62px; gap: .7rem; }
+    .site-brand { gap: .45rem; font-size: 1rem; }
+    .site-brand img { width: 31px; height: 31px; }
+    .site-links { gap: .9rem; }
+    .site-links a { font-size: .8rem; }
+    .site-links a[aria-current="page"]::after { bottom: -1.15rem; }
+}

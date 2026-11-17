@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <title>Contact FlagRover</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body class="contact-page">
+    <header class="site-header">
+        <a class="site-brand" href="index.html" aria-label="FlagRover home">
+            <img src="assests/FlagRover Travel Emblem.png" alt="">
+            <span>Flag<span>Rover</span></span>
+        </a>
+        <nav class="site-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a class="current" href="contact.html" aria-current="page">Contact</a>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-intro">
+            <p class="contact-eyebrow"><span></span> A NOTE FROM YOUR CORNER OF THE WORLD</p>
+            <h1>We’d love to<br><span>hear from you.</span></h1>
+            <p class="contact-description">Found a curious flag fact? Have an idea for the next expedition? Send a note our way. We’re always glad to hear from fellow explorers.</p>
+            <div class="contact-postcard" aria-hidden="true">
+                <div class="postcard-sun"></div>
+                <div class="postcard-route route-one"></div>
+                <div class="postcard-route route-two"></div>
+                <span class="postcard-star star-a">✦</span><span class="postcard-star star-b">✧</span>
+                <span class="postcard-label">GREETINGS<br>FROM EVERYWHERE</span>
+                <div class="postcard-stamp">FR<br><span>✦</span></div>
+                <div class="postcard-coordinates">20° N &nbsp; 30° E &nbsp; • &nbsp; ANYWHERE</div>
+            </div>
+            <div class="contact-note"><span class="note-icon">✉</span><span><strong>Every great journey starts with a hello.</strong><br>Drop us a line and tell us what’s on your mind.</span></div>
+        </section>
+
+        <section class="contact-form-panel" aria-labelledby="form-title">
+            <div class="form-heading">
+                <div><p class="form-kicker">YOUR MESSAGE</p><h2 id="form-title">Send us a note</h2></div>
+                <span class="form-index">01 <i>/ 01</i></span>
+            </div>
+            <form class="contact-form">
+                <div class="form-row">
+                    <label for="name">Your name<input id="name" name="name" type="text" placeholder="Explorer name" autocomplete="name" required></label>
+                    <label for="email">Email address<input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+                </div>
+                <label for="subject">What’s this about?
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Choose a topic</option>
+                        <option>Just saying hello</option>
+                        <option>Flag or country suggestion</option>
+                        <option>Something isn’t working</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label for="message">Your message<textarea id="message" name="message" rows="5" placeholder="Tell us what’s on your mind…" required></textarea></label>
+                <button type="button" class="send-button">Send your message <span aria-hidden="true">→</span></button>
+                <p class="form-footnote"><span aria-hidden="true">✦</span> Thanks for helping make this expedition better.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="contact-footer">
+        <a href="index.html">Flag<span>Rover</span></a>
+        <span>Made for the curious, wherever they are.</span>
+        <a href="about.html">Our story ↗</a>
+    </footer>
+</body>
+</html>
