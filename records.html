@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#22223b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+    <title>Expedition Records — FlagRover</title>
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body class="records-page">
+    <header class="site-header">
+        <a class="site-brand" href="index.html" aria-label="FlagRover home">
+            <span>Flag<span class="brand-accent">Rover</span></span>
+        </a>
+        <nav class="site-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="atlas.html">Atlas</a>
+            <a href="records.html" aria-current="page">Records</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="records-main">
+        <section class="records-intro">
+            <p class="records-eyebrow"><span></span> EXPEDITION LOG</p>
+            <h1>Your<br><span>records.</span></h1>
+            <p class="records-lede">Every expedition leaves a trace. Here are your best scores and passport progress, saved on this device.</p>
+        </section>
+
+        <div class="records-summary" id="records-summary"></div>
+        <div class="records-grid" id="records-grid"></div>
+
+        <p class="records-empty" id="records-empty" hidden>
+            No expeditions logged yet. <a href="index.html#game">Start your first expedition</a> and your records will appear here.
+        </p>
+    </main>
+
+    <footer class="records-footer">
+        <a href="index.html">Flag<span class="brand-accent">Rover</span></a>
+        <span>Made for the curious, wherever they are.</span>
+        <a href="atlas.html">Browse the atlas ↗</a>
+    </footer>
+
+    <script src="js/flags-data.js"></script>
+    <script src="js/records.js"></script>
+</body>
+
+</html>

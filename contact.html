@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b1220">
+    <meta name="theme-color" content="#22223b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
     <title>Contact FlagRover</title>
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -11,13 +14,14 @@
 <body class="contact-page">
     <header class="site-header">
         <a class="site-brand" href="index.html" aria-label="FlagRover home">
-            <img src="assests/FlagRover Travel Emblem.png" alt="">
-            <span>Flag<span>Rover</span></span>
+            <span>Flag<span class="brand-accent">Rover</span></span>
         </a>
         <nav class="site-links" aria-label="Main navigation">
             <a href="index.html">Home</a>
+            <a href="atlas.html">Atlas</a>
+            <a href="records.html">Records</a>
             <a href="about.html">About</a>
-            <a class="current" href="contact.html" aria-current="page">Contact</a>
+            <a href="contact.html" aria-current="page">Contact</a>
         </nav>
     </header>
 
@@ -58,7 +62,7 @@
                     </select>
                 </label>
                 <label for="message">Your message<textarea id="message" name="message" rows="5" placeholder="Tell us what’s on your mind…" required></textarea></label>
-                <button type="button" class="send-button">Send your message <span aria-hidden="true">→</span></button>
+                <button type="submit" class="send-button">Send your message <span aria-hidden="true">→</span></button>
                 <p class="form-footnote"><span aria-hidden="true">✦</span> Thanks for helping make this expedition better.</p>
             </form>
         </section>
@@ -69,5 +73,7 @@
         <span>Made for the curious, wherever they are.</span>
         <a href="about.html">Our story ↗</a>
     </footer>
+    <p class="contact-toast" id="contact-toast" role="status" aria-live="polite" hidden></p>
+    <script src="js/contact.js"></script>
 </body>
 </html>

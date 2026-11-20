@@ -1,0 +1,285 @@
+/* --- Expedition Records page --- */
+.records-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.records-page {
+    --atlas-ink: #f2e9e4;
+    --atlas-muted: #c9ada7;
+    --atlas-deep: #1a1a33;
+    --atlas-line: rgba(201, 173, 167, .18);
+    --atlas-trail: #c9ada7;
+    --atlas-sun: #9a8c98;
+    min-height: 100vh;
+    padding: 0 6.5vw 4rem;
+    color: var(--atlas-ink);
+    background:
+        radial-gradient(ellipse at 12% 6%, rgba(74, 78, 105, .4), transparent 32rem),
+        radial-gradient(ellipse at 90% 50%, rgba(154, 140, 152, .16), transparent 36rem),
+        #22223b;
+    background-attachment: fixed;
+}
+
+.records-main {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.records-intro {
+    position: relative;
+    padding: 4rem 0 2.5rem;
+    max-width: 720px;
+}
+
+.records-intro::before,
+.records-intro::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .3;
+    pointer-events: none;
+}
+
+.records-intro::before {
+    top: -120px;
+    right: -80px;
+    background: #4a4e69;
+    animation: records-drift 14s ease-in-out infinite alternate;
+}
+
+.records-intro::after {
+    bottom: -160px;
+    left: -120px;
+    background: #9a8c98;
+    opacity: .18;
+    animation: records-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes records-drift {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(40px, 30px) scale(1.15); }
+}
+
+.records-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    width: fit-content;
+    padding: .45rem 1rem;
+    color: var(--atlas-trail);
+    border: 1px solid var(--atlas-line);
+    border-radius: 999px;
+    background: rgba(201, 173, 167, .08);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+}
+
+.records-eyebrow>span {
+    width: 24px;
+    height: 1px;
+    background: var(--atlas-sun);
+}
+
+.records-intro h1 {
+    margin-top: 1.6rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    font-weight: 600;
+    line-height: .98;
+    letter-spacing: -.03em;
+}
+
+.records-intro h1 span {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--atlas-sun);
+}
+
+.records-lede {
+    max-width: 520px;
+    margin-top: 1.4rem;
+    color: var(--atlas-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.records-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-bottom: 1.6rem;
+}
+
+.record-total {
+    display: grid;
+    gap: .15rem;
+    padding: .9rem 1.3rem;
+    border: 1px solid var(--atlas-line);
+    border-radius: 14px;
+    background: rgba(74, 78, 105, .35);
+}
+
+.record-total strong {
+    color: var(--atlas-trail);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.record-total span {
+    color: var(--atlas-muted);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.record-card {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    padding: 1.5rem;
+    border: 1px solid var(--atlas-line);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(74, 78, 105, .4), rgba(26, 26, 51, .85));
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .22), inset 0 1px rgba(255, 255, 255, .03);
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.record-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201, 173, 167, .45);
+}
+
+.record-card-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.record-card-heading h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.record-score {
+    color: var(--atlas-trail);
+    font-size: .85rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    white-space: nowrap;
+}
+
+.record-progress {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(154, 140, 152, .2);
+    overflow: hidden;
+}
+
+.record-progress span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--atlas-sun), var(--atlas-trail));
+}
+
+.record-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--atlas-muted);
+    font-size: .8rem;
+}
+
+.record-card-footer a {
+    color: var(--atlas-trail);
+    font-weight: 750;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.record-card-footer a:hover {
+    color: #f2e9e4;
+}
+
+.records-empty {
+    padding: 2rem;
+    border: 1px dashed var(--atlas-line);
+    border-radius: 18px;
+    color: var(--atlas-muted);
+    text-align: center;
+    font-size: .95rem;
+}
+
+.records-empty a {
+    color: var(--atlas-trail);
+    font-weight: 750;
+}
+
+.records-footer {
+    max-width: 1100px;
+    margin: 2rem auto 0;
+    padding: 1.4rem 0 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--atlas-line);
+    color: #9a8c98;
+    font-size: .78rem;
+}
+
+.records-footer a {
+    color: #f2e9e4;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.records-footer a:hover {
+    color: #c9ada7;
+}
+
+@media (max-width: 640px) {
+    .records-page {
+        padding: 0 5vw 3rem;
+    }
+
+    .records-intro {
+        padding: 2.8rem 0 2rem;
+    }
+
+    .records-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .records-footer {
+        flex-wrap: wrap;
+    }
+
+    .records-footer>span {
+        order: 3;
+        width: 100%;
+        text-align: center;
+    }
+}

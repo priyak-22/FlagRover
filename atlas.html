@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="atlas-document">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#22223b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+    <title>World Atlas — FlagRover</title>
+    <link rel="stylesheet" href="css/atlas.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body class="atlas-page">
+    <header class="site-header">
+        <a class="site-brand" href="index.html" aria-label="FlagRover home">
+            <span>Flag<span class="brand-accent">Rover</span></span>
+        </a>
+        <nav class="site-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="atlas.html" aria-current="page">Atlas</a>
+            <a href="records.html">Records</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="atlas-main">
+        <section class="atlas-intro">
+            <p class="atlas-eyebrow"><span></span> THE FIELD GUIDE</p>
+            <h1>Every flag,<br><span>one atlas.</span></h1>
+            <p class="atlas-lede">Browse every flag in the FlagRover world. The ones you have discovered glow in full color — the rest are still waiting for their stamp.</p>
+            <div class="atlas-totals" id="atlas-totals"></div>
+        </section>
+
+        <section class="atlas-map-panel" aria-labelledby="atlas-map-title">
+            <div class="atlas-map-heading">
+                <div>
+                    <p class="atlas-map-kicker">EXPLORE THE MAP</p>
+                    <h2 id="atlas-map-title">Where in the world?</h2>
+                </div>
+                <div class="atlas-legend">
+                    <span><i class="legend-dot discovered"></i>Discovered</span>
+                    <span><i class="legend-dot"></i>Undiscovered</span>
+                </div>
+            </div>
+            <div class="atlas-map-wrap">
+                <img src="assets/world-map.svg" alt="World map with expedition markers">
+                <div class="atlas-dots" id="atlas-dots"></div>
+            </div>
+            <p class="atlas-map-hint">Hover a marker to reveal what you have found. Click one to jump to its entry below.</p>
+        </section>
+
+        <div class="atlas-continents" id="atlas-continents"></div>
+    </main>
+
+    <footer class="atlas-footer">
+        <a href="index.html">Flag<span class="brand-accent">Rover</span></a>
+        <span>Made for the curious, wherever they are.</span>
+        <a href="records.html">Your records ↗</a>
+    </footer>
+
+    <script src="js/flags-data.js"></script>
+    <script src="js/country-coords.js"></script>
+    <script src="js/atlas.js"></script>
+</body>
+
+</html>

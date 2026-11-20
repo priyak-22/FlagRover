@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     min-height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(90deg, rgba(7, 17, 31, .82), rgba(7, 17, 31, .35)), url('../assests/images/hero-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(90deg, rgba(7, 17, 31, .82), rgba(7, 17, 31, .35)), url('../assets/images/hero-bg.jpg') center/cover no-repeat;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 1px solid #334155;
@@ -75,11 +75,29 @@ body {
 }
 
 @media (max-width: 560px) {
-    .hero { min-height: 88vh; }
-    .hero-copy { width: 100%; margin-top: 16vh; padding: 0 1.4rem 4rem; }
-    .hero-kicker { font-size: .61rem; letter-spacing: .14em; }
-    .hero-copy h1 { font-size: clamp(3.4rem, 16vw, 5rem); }
-    .hero-description { max-width: 440px; font-size: 1rem; }
+    .hero {
+        min-height: 88vh;
+    }
+
+    .hero-copy {
+        width: 100%;
+        margin-top: 16vh;
+        padding: 0 1.4rem 4rem;
+    }
+
+    .hero-kicker {
+        font-size: .61rem;
+        letter-spacing: .14em;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(3.4rem, 16vw, 5rem);
+    }
+
+    .hero-description {
+        max-width: 440px;
+        font-size: 1rem;
+    }
 }
 
 /* --- Game rules --- */
@@ -92,21 +110,84 @@ body {
     gap: clamp(2rem, 5vw, 5rem);
     border: 1px solid #334155;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(30,41,59,.94), rgba(15,23,42,.96));
-    box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    background: linear-gradient(135deg, rgba(30, 41, 59, .94), rgba(15, 23, 42, .96));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
 }
-.rules-kicker { color: #38bdf8; font-size: .68rem; font-weight: 800; letter-spacing: .16em; }
-.rules-heading h2 { margin-top: .65rem; color: #f8fafc; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -.05em; }
-.rules-heading > p:last-child { max-width: 300px; margin-top: .8rem; color: #94a3b8; font-size: .9rem; line-height: 1.7; }
-.rules-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 1.6rem; }
-.rules-list li { display: flex; align-items: flex-start; gap: .8rem; }
-.rules-list li > span { flex: 0 0 auto; color: #38bdf8; font-size: .68rem; font-weight: 800; letter-spacing: .1em; }
-.rules-list h3 { color: #e2e8f0; font-size: .92rem; }.rules-list p { margin-top: .25rem; color: #94a3b8; font-size: .8rem; line-height: 1.6; }
+
+.rules-kicker {
+    color: #38bdf8;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.rules-heading h2 {
+    margin-top: .65rem;
+    color: #f8fafc;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -.05em;
+}
+
+.rules-heading>p:last-child {
+    max-width: 300px;
+    margin-top: .8rem;
+    color: #94a3b8;
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+.rules-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem 1.6rem;
+}
+
+.rules-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: .8rem;
+}
+
+.rules-list li>span {
+    flex: 0 0 auto;
+    color: #38bdf8;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.rules-list h3 {
+    color: #e2e8f0;
+    font-size: .92rem;
+}
+
+.rules-list p {
+    margin-top: .25rem;
+    color: #94a3b8;
+    font-size: .8rem;
+    line-height: 1.6;
+}
+
 @media (max-width: 700px) {
-    .rules { grid-template-columns: 1fr; gap: 1.8rem; margin-top: 2.5rem; }
-    .rules-list { gap: 1.25rem; }
+    .rules {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+        margin-top: 2.5rem;
+    }
+
+    .rules-list {
+        gap: 1.25rem;
+    }
 }
-@media (max-width: 480px) { .rules-list { grid-template-columns: 1fr; } }
+
+@media (max-width: 480px) {
+    .rules-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 .jump {
     display: inline-flex;
     align-items: center;
@@ -122,11 +203,17 @@ body {
     font-weight: 750;
     transition: background .2s ease, transform .2s ease;
 }
-.jump:hover { background: #bae6fd; transform: translateY(-2px); }
+
+.jump:hover {
+    background: #bae6fd;
+    transform: translateY(-2px);
+}
+
 /* --- 3. Game Section --- */
 .game {
+    position: relative;
     scroll-margin-top: 1.5rem;
-    max-width: 600px;
+    width: 80%;
     margin: 2rem auto;
     background: #1e293b;
     padding: 2.5rem;
@@ -134,6 +221,97 @@ body {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
     border: 1px solid #334155;
     text-align: center;
+}
+
+.answer-effect {
+    position: absolute;
+    z-index: 2;
+    top: 5.25rem;
+    left: 50%;
+    width: max-content;
+    max-width: calc(100% - 2rem);
+    padding: .8rem 1.2rem;
+    border-radius: 999px;
+    opacity: 0;
+    pointer-events: none;
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    font-weight: 800;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+    transform: translate(-50%, 10px) scale(.7);
+}
+
+.answer-effect.is-cheer {
+    color: #052e16;
+    background: #86efac;
+    animation: on-screen-cheer 2.1s ease-out both;
+}
+
+.answer-effect.is-disappointed {
+    color: #4c0519;
+    background: #fda4af;
+    animation: on-screen-disappointed 2.1s ease-out both;
+}
+
+@keyframes on-screen-cheer {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 12px) scale(.65) rotate(-5deg);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -8px) scale(1.12) rotate(3deg);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1) rotate(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -22px) scale(.95);
+    }
+}
+
+@keyframes on-screen-disappointed {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -12px) scale(.8);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translate(-50%, 5px) scale(1.05);
+    }
+
+    30% {
+        transform: translate(calc(-50% - 5px), 5px) scale(1);
+    }
+
+    40% {
+        transform: translate(calc(-50% + 5px), 5px) scale(1);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translate(-50%, 5px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 14px) scale(.95);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .answer-effect.is-cheer,
+    .answer-effect.is-disappointed {
+        animation: none;
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 .game .detail {
@@ -153,7 +331,10 @@ body {
     text-decoration: none;
     font-weight: 700;
 }
-.game .detail a:hover { color: #7dd3fc; }
+
+.game .detail a:hover {
+    color: #7dd3fc;
+}
 
 .game h1 {
     color: #f8fafc;
@@ -215,22 +396,182 @@ body {
     cursor: pointer;
     transition: all .2s ease;
 }
+
 .game .guess .answer-option:hover:not(:disabled) {
     background-color: #075985;
     border-color: #38bdf8;
     transform: translateY(-2px);
 }
-.game .guess .answer-option:disabled { cursor: default; }
-.game .guess .answer-option.is-correct { background: #14532d; border-color: #4ade80; }
-.game .guess .answer-option.is-wrong { background: #7f1d1d; border-color: #fb7185; }
-.game-feedback { min-height: 1.7em; margin-top: 1rem; color: #94a3b8; }
-.expedition-picker { display: flex; align-items: end; justify-content: center; gap: .75rem; margin: 0 auto 1.5rem; }
-.expedition-picker label { display: grid; gap: .35rem; color: #94a3b8; text-align: left; font-size: .78rem; font-weight: 600; }
-.expedition-picker select { min-width: 170px; min-height: 44px; padding: .6rem .8rem; border: 1px solid #475569; border-radius: 7px; color: #f8fafc; background: #0f172a; font: inherit; }
-.start-expedition { min-height: 44px; padding: .65rem .95rem; border: 0; border-radius: 7px; color: #082032; background: #7dd3fc; font-weight: 750; cursor: pointer; }
-.start-expedition:hover { background: #bae6fd; }
-.start-expedition:focus-visible, .expedition-picker select:focus-visible { outline: 3px solid rgba(56,189,248,.45); outline-offset: 2px; }
-.game .flag[hidden] { display: none; }
+
+.game .guess .answer-option:disabled {
+    cursor: default;
+}
+
+.game .guess .answer-option.is-correct {
+    background: #14532d;
+    border-color: #4ade80;
+}
+
+.game .guess .answer-option.is-wrong {
+    background: #7f1d1d;
+    border-color: #fb7185;
+}
+
+.game-feedback {
+    min-height: 1.7em;
+    margin-top: 1rem;
+    color: #94a3b8;
+}
+
+.game-feedback[data-mood="cheer"] {
+    color: #86efac;
+    animation: answer-cheer .7s ease both;
+}
+
+.game-feedback[data-mood="cheer"]::after {
+    content: "  🎉✨";
+    display: inline-block;
+    animation: celebration-pop .7s ease both;
+}
+
+.game-feedback[data-mood="disappointed"] {
+    color: #fda4af;
+    animation: answer-disappointed .45s ease both;
+}
+
+.game-feedback[data-mood="disappointed"]::after {
+    content: "  😔";
+    display: inline-block;
+    animation: disappointment-drop .45s ease both;
+}
+
+@keyframes answer-cheer {
+    0% {
+        transform: scale(.92);
+    }
+
+    55% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes celebration-pop {
+    0% {
+        transform: translateY(8px) scale(.4);
+        opacity: 0;
+    }
+
+    65% {
+        transform: translateY(-5px) scale(1.25);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes answer-disappointed {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    75% {
+        transform: translateX(6px);
+    }
+}
+
+@keyframes disappointment-drop {
+    from {
+        transform: translateY(-6px);
+        opacity: .4;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .game-feedback[data-mood],
+    .game-feedback[data-mood]::after {
+        animation: none;
+    }
+}
+
+.expedition-picker {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: .75rem;
+    margin: 0 auto 1.5rem;
+}
+
+.expedition-picker label {
+    display: grid;
+    gap: .35rem;
+    color: #94a3b8;
+    text-align: left;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.expedition-picker select {
+    min-width: 170px;
+    min-height: 44px;
+    padding: .6rem .8rem;
+    border: 1px solid #475569;
+    border-radius: 7px;
+    color: #f8fafc;
+    background: #0f172a;
+    font: inherit;
+}
+
+.expedition-picker select option:disabled {
+    color: #64748b;
+}
+
+.start-expedition {
+    min-height: 44px;
+    padding: .65rem .95rem;
+    border: 0;
+    border-radius: 7px;
+    color: #082032;
+    background: #7dd3fc;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.start-expedition:hover {
+    background: #bae6fd;
+}
+
+.start-expedition:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+.start-expedition:focus-visible,
+.expedition-picker select:focus-visible {
+    outline: 3px solid rgba(56, 189, 248, .45);
+    outline-offset: 2px;
+}
+
+.game .flag[hidden] {
+    display: none;
+}
 
 /* --- 4. Passport Section --- */
 .passport {
@@ -277,7 +618,7 @@ body {
     border-color: #38bdf8;
     background: #1e293b;
     color: #38bdf8;
-    
+
 }
 
 .passport .tags .passport-stamp {
@@ -290,20 +631,506 @@ body {
     border-style: solid;
     color: #cbd5e1;
 }
-.passport-stamp img { width: 64px; height: 42px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,.35)); }
-.passport-stamp span { font-size: .85rem; }
-.passport .tags { grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; }
-.continent-passport { min-width: 0; padding: 1rem; border: 1px solid #334155; border-radius: 10px; background: #111d30; }
-.continent-passport > h2 { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-bottom: .8rem; color: #e2e8f0; font-size: 1rem; }
-.continent-count { color: #38bdf8; font-size: .75rem; white-space: nowrap; }
-.continent-stamps { display: flex; flex-wrap: wrap; gap: .5rem; }
-.continent-stamps .passport-stamp { min-width: 88px; flex: 1 1 88px; min-height: 75px; margin: 0; padding: .6rem .4rem; border: 1px dashed #475569; background: #0f172a; text-align: center; }
-.continent-stamps .passport-stamp img { width: 48px; height: 32px; }
-.continent-stamps .passport-stamp span { color: #cbd5e1; font-size: .72rem; }
-.continent-stamps .empty-passport { width: 100%; padding: .9rem .4rem; border: 1px dashed #334155; color: #71839a; font-size: .78rem; text-align: center; }
-@media (max-width: 600px) {
-    .expedition-picker { align-items: stretch; flex-direction: column; }
-    .expedition-picker select, .start-expedition { width: 100%; }
-    .passport .tags { grid-template-columns: 1fr; }
+
+.passport-stamp img {
+    width: 64px;
+    height: 42px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .35));
 }
 
+.passport-stamp span {
+    font-size: .85rem;
+}
+
+.passport .tags {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    text-align: left;
+}
+
+.continent-passport {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #111d30;
+}
+
+.continent-passport>h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    margin-bottom: .8rem;
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+.continent-count {
+    color: #38bdf8;
+    font-size: .75rem;
+    white-space: nowrap;
+}
+
+.continent-stamps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.continent-stamps .passport-stamp {
+    min-width: 88px;
+    flex: 1 1 88px;
+    min-height: 75px;
+    margin: 0;
+    padding: .6rem .4rem;
+    border: 1px dashed #475569;
+    background: #0f172a;
+    text-align: center;
+}
+
+.continent-stamps .passport-stamp img {
+    width: 48px;
+    height: 32px;
+}
+
+.continent-stamps .passport-stamp span {
+    color: #cbd5e1;
+    font-size: .72rem;
+}
+
+.continent-stamps .empty-passport {
+    width: 100%;
+    padding: .9rem .4rem;
+    border: 1px dashed #334155;
+    color: #71839a;
+    font-size: .78rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .expedition-picker {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .expedition-picker select,
+    .start-expedition {
+        width: 100%;
+    }
+
+    .passport .tags {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Lavender dusk theme: keep the original page layout and full-screen hero. */
+:root {
+    --atlas-ink: #f2e9e4;
+    --atlas-muted: #c9ada7;
+    --atlas-panel: #4a4e69;
+    --atlas-deep: #22223b;
+    --atlas-line: rgba(201, 173, 167, .18);
+    --atlas-trail: #c9ada7;
+    --atlas-sun: #9a8c98;
+}
+
+body {
+    color: var(--atlas-ink);
+    background:
+        radial-gradient(ellipse at 12% 6%, rgba(74, 78, 105, .4), transparent 32rem),
+        radial-gradient(ellipse at 90% 50%, rgba(154, 140, 152, .16), transparent 36rem),
+        #22223b;
+    background-attachment: fixed;
+}
+
+.hero {
+    min-height: 100vh;
+    border-color: var(--atlas-line);
+    background-image:
+        linear-gradient(90deg, rgba(24, 23, 48, .88), rgba(24, 23, 48, .34)),
+        url('../assets/images/hero-bg.jpg');
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+}
+
+.site-brand > span > span, .hero-copy h1 span { color: var(--atlas-trail); }
+.hero-kicker span { background: var(--atlas-sun); }
+.hero-kicker, .rules-kicker { color: var(--atlas-trail); }
+.hero-description { color: #ddd0cb; }
+.jump { color: #22223b; background: var(--atlas-trail); border-color: var(--atlas-trail); }
+.jump:hover { color: #22223b; background: #f2e9e4; }
+
+.rules, .game, .passport {
+    color: var(--atlas-ink);
+    background: linear-gradient(145deg, rgba(74, 78, 105, .55), rgba(34, 34, 59, .92));
+    border-color: var(--atlas-line);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .25), inset 0 1px rgba(255, 255, 255, .035);
+}
+.rules-heading h2, .passport h1, .game h1, .rules-list h3 { color: var(--atlas-ink); }
+.rules-heading > p:last-child, .rules-list p, .expedition-picker label, .game-feedback { color: var(--atlas-muted); }
+.rules-list li { border-color: var(--atlas-line); }
+.rules-list li > span, .passport > div:first-of-type strong { color: var(--atlas-sun); }
+
+.game .detail, .continent-passport {
+    background: rgba(24, 23, 48, .62);
+    border-color: var(--atlas-line);
+}
+.game .detail { color: var(--atlas-muted); }
+.game .detail strong, .continent-count { color: var(--atlas-trail); }
+.game .detail a { color: var(--atlas-sun); }
+.game .detail a:hover { color: var(--atlas-trail); }
+.expedition-picker select {
+    color: var(--atlas-ink);
+    background: var(--atlas-deep);
+    border-color: var(--atlas-line);
+}
+.start-expedition { color: #22223b; background: var(--atlas-trail); }
+.start-expedition:hover { background: #f2e9e4; }
+.game .flag {
+    background-color: #181730;
+    border-color: rgba(201, 173, 167, .5);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .35);
+}
+.game .guess .answer-option {
+    color: var(--atlas-ink);
+    background: rgba(24, 23, 48, .72);
+    border-color: var(--atlas-line);
+}
+.game .guess .answer-option:hover:not(:disabled) {
+    background: #3d4166;
+    border-color: var(--atlas-trail);
+}
+.game .guess .answer-option.is-correct { background: #2f4a3f; border-color: #9dc5ab; }
+.game .guess .answer-option.is-wrong { background: #4a2f3d; border-color: #d8a0a8; }
+
+.passport > div:first-of-type { color: var(--atlas-muted); }
+.continent-passport { border-radius: 14px; }
+.continent-passport > h2 { color: var(--atlas-ink); }
+.continent-stamps .passport-stamp {
+    background: #1c1c3c;
+    border-color: var(--atlas-line);
+}
+.continent-stamps .empty-passport { color: #9a8c98; border-color: var(--atlas-line); }
+
+/* Passport stamp cards inherit the lavender palette. */
+.passport .tags p,
+.passport .tags p:hover {
+    background: #1c1c3c;
+    border-color: var(--atlas-line);
+    color: var(--atlas-muted);
+}
+
+.passport .tags p:hover {
+    border-color: var(--atlas-trail);
+    color: var(--atlas-trail);
+}
+
+.passport .tags .passport-stamp,
+.passport .tags .passport-stamp span,
+.continent-stamps .passport-stamp span {
+    color: #f2e9e4;
+}
+
+/* Keep the passport below the game in a scrollable dashboard. */
+.expedition-dashboard {
+    width: min(1440px, calc(100% - 3rem));
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.5rem;
+}
+
+.expedition-dashboard .game,
+.expedition-dashboard .passport {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.expedition-dashboard .game {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.expedition-dashboard .game::before,
+.expedition-dashboard .game .detail,
+.expedition-dashboard .game h1,
+.expedition-dashboard .expedition-picker,
+.expedition-dashboard .game h3#question,
+.expedition-dashboard .game-feedback { grid-column: 1 / -1; }
+
+.expedition-dashboard .game .flag { grid-column: 1; }
+.expedition-dashboard .game .guess { grid-column: 2; }
+
+.expedition-dashboard .game .flag {
+    width: 100%;
+    max-width: 100%;
+    height: 230px;
+}
+.expedition-dashboard .game .guess .answer-option {
+    min-height: 82px;
+    padding: .7rem .8rem;
+    font-size: .94rem;
+}
+
+@media (max-width: 800px) {
+    .expedition-dashboard .game { grid-template-columns: 1fr; }
+    .expedition-dashboard .game .flag,
+    .expedition-dashboard .game .guess,
+    .expedition-dashboard .game-feedback { grid-column: 1; }
+    .expedition-dashboard .game .flag { height: clamp(190px, 52vw, 230px); }
+}
+
+@media (max-width: 560px) {
+    .expedition-dashboard { width: calc(100% - 1.25rem); margin: 2rem auto; }
+}
+
+/* Give every continent passport card a consistent footprint. */
+.passport .tags { grid-auto-rows: minmax(280px, 1fr); align-items: stretch; }
+.continent-passport { height: 100%; display: flex; flex-direction: column; }
+.continent-passport > h2 { flex: 0 0 auto; min-height: 2rem; }
+.continent-stamps {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 230px;
+    overflow-y: auto;
+    align-content: flex-start;
+    padding-right: .2rem;
+}
+
+/* Align the main content panels to one shared page grid. */
+.rules {
+    width: min(1180px, calc(100% - 3rem));
+    max-width: 1180px;
+    margin: 3rem auto 1.5rem;
+}
+
+.expedition-dashboard {
+    width: min(1180px, calc(100% - 3rem));
+    margin: 1.5rem auto 3rem;
+    gap: 1.5rem;
+}
+
+@media (max-width: 560px) {
+    .rules { width: calc(100% - 1.25rem); margin: 1.5rem auto; }
+    .expedition-dashboard { width: calc(100% - 1.25rem); margin: 1.5rem auto 2rem; }
+}
+
+/* A centered challenge stage keeps the flag and answers in visual balance. */
+.rules,
+.expedition-dashboard {
+    width: min(1100px, calc(100% - 3rem));
+}
+
+.expedition-dashboard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.expedition-dashboard .game {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: clamp(1.25rem, 4vw, 2.75rem);
+}
+
+.expedition-dashboard .game::before,
+.expedition-dashboard .game .detail,
+.expedition-dashboard .game h1,
+.expedition-dashboard .expedition-picker,
+.expedition-dashboard .game h3#question,
+.expedition-dashboard .game-feedback,
+.expedition-dashboard .game .flag,
+.expedition-dashboard .game .guess {
+    grid-column: 1;
+}
+
+.expedition-dashboard .game .detail { justify-content: center; }
+.expedition-dashboard .game h1 { margin: .25rem 0; }
+.expedition-dashboard .expedition-picker { justify-content: center; }
+.expedition-dashboard .game h3#question { margin: .4rem 0 0; }
+.expedition-dashboard .game .flag {
+    width: min(420px, 100%);
+    height: 250px;
+    margin: 0 auto;
+}
+.expedition-dashboard .game .guess {
+    width: min(700px, 100%);
+    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .85rem;
+}
+.expedition-dashboard .game .guess .answer-option {
+    min-height: 64px;
+    text-align: center;
+}
+.expedition-dashboard .game-feedback { text-align: center; }
+.expedition-dashboard .passport { width: 100%; }
+
+@media (max-width: 560px) {
+    .rules, .expedition-dashboard { width: calc(100% - 1.25rem); }
+    .expedition-dashboard .game .flag { height: 210px; }
+    .expedition-dashboard .game .guess { grid-template-columns: 1fr; }
+}
+
+/* Place the flag beside its question and answer choices. */
+.challenge-layout {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    width: 100%;
+}
+.challenge-layout:has(.flag[hidden]) { grid-template-columns: 1fr; }
+
+.challenge-layout .flag {
+    width: 100%;
+    height: clamp(210px, 24vw, 300px);
+    margin: 0;
+}
+
+.challenge-answers { min-width: 0; }
+.challenge-answers h3#question { margin: 0 0 1rem; text-align: center; }
+.challenge-answers .guess { width: 100%; grid-template-columns: 1fr; margin: 0; }
+.challenge-answers .game-feedback { text-align: center; }
+.expedition-dashboard .game .detail {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-items: center;
+    gap: .75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+}
+.expedition-dashboard .game .detail p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    white-space: nowrap;
+}
+.expedition-dashboard .game .detail a { margin: 0; align-self: center; white-space: nowrap; }
+
+@media (max-width: 760px) {
+    .challenge-layout { grid-template-columns: 1fr; }
+    .challenge-layout .flag { width: min(440px, 100%); height: clamp(190px, 52vw, 260px); margin-inline: auto; }
+    .challenge-answers h3#question, .challenge-answers .game-feedback { text-align: center; }
+    .challenge-answers .guess { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+    .challenge-answers .guess { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .expedition-dashboard .game .detail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* --- Signature details: travel-journal theme --- */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hero-copy h1,
+.rules-heading h2,
+.game h1,
+.passport h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -.02em;
+}
+
+.hero-copy h1 span {
+    font-style: italic;
+    font-weight: 500;
+}
+
+.hero-kicker,
+.rules-kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: .45rem 1rem;
+    border: 1px solid var(--atlas-line);
+    border-radius: 999px;
+    background: rgba(201, 173, 167, .08);
+    backdrop-filter: blur(4px);
+}
+
+.rules,
+.passport {
+    position: relative;
+    border-radius: 22px;
+}
+
+.rules::before,
+.passport::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--atlas-trail), transparent);
+    opacity: .7;
+}
+
+.game {
+    border-radius: 22px;
+}
+
+.jump,
+.start-expedition {
+    border-radius: 999px;
+    letter-spacing: .03em;
+}
+
+.jump:hover,
+.start-expedition:hover {
+    box-shadow: 0 14px 30px rgba(201, 173, 167, .35);
+}
+
+.game .flag {
+    border: 1px solid rgba(201, 173, 167, .5);
+    outline: 1px dashed rgba(201, 173, 167, .3);
+    outline-offset: 7px;
+    border-radius: 12px;
+}
+
+.game .guess .answer-option {
+    border-radius: 12px;
+}
+
+.game .detail {
+    border-radius: 14px;
+}
+
+.continent-passport {
+    border-radius: 16px;
+}
+
+.continent-stamps .passport-stamp {
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px rgba(242, 233, 228, .07), 0 8px 18px rgba(0, 0, 0, .3);
+    transition: transform .25s ease;
+}
+
+.continent-stamps .passport-stamp:nth-child(odd) {
+    transform: rotate(-1.4deg);
+}
+
+.continent-stamps .passport-stamp:nth-child(even) {
+    transform: rotate(1.4deg);
+}
+
+.continent-stamps .passport-stamp:hover {
+    transform: rotate(0deg) translateY(-3px);
+}

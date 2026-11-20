@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlagRover</title>
+    <meta name="theme-color" content="#22223b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
-    <script src="js/game.js" defer></script>
 </head>
 
 <body>
     <section class="hero">
        <header class="site-header">
         <a class="site-brand" href="index.html" aria-label="FlagRover home">
-            <img src="assests/FlagRover Travel Emblem.png" alt="">
             <span>Flag<span class="brand-accent">Rover</span></span>
         </a>
         <nav class="site-links" aria-label="Main navigation">
-            <a class="active" href="index.html" aria-current="page">Home</a>
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="atlas.html">Atlas</a>
+            <a href="records.html">Records</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -27,7 +31,7 @@
         <div class="hero-copy">
             <p class="hero-kicker"><span></span> YOUR PASSPORT TO THE PLANET</p>
             <h1>Welcome to<br><span>FlagRover</span></h1>
-            <p class="hero-description">Set off on a world-wide flag expedition. Test your knowledge, discover new places, and collect stamps for your digital passport as you explore.</p>
+            <p class="hero-description">Set off on a worldwide flag expedition. Test your knowledge, discover new places, and collect stamps for your digital passport as you explore.</p>
             <a class="jump" href="#game">Jump to game <span aria-hidden="true">↓</span></a>
         </div>
     </section>
@@ -44,29 +48,35 @@
             <li><span>01</span><div><h3>Study the flag</h3><p>A flag appears. Look closely at its colors, symbols, and pattern.</p></div></li>
             <li><span>02</span><div><h3>Choose a country</h3><p>Pick the right answer from the four country options.</p></div></li>
             <li><span>03</span><div><h3>Build your score</h3><p>Correct guesses earn a point and add that country to your exploration passport.</p></div></li>
-            <li><span>04</span><div><h3>Watch your lives</h3><p>A wrong guess costs one life. The expedition ends when you run out.</p></div></li>
+            <li><span>04</span><div><h3>Watch your lives</h3><p>You have five lives. When they run out, the expedition pauses for two minutes. Your passport stamps are kept.</p></div></li>
+            <li><span>05</span><div><h3>Unlock new continents</h3><p>Complete every country in a continent to unlock the next one.</p></div></li>
         </ol>
     </section>
 
-
+    <main class="expedition-dashboard">
     <section class="game" id="game">
+        <div class="answer-effect" id="answer-effect" aria-hidden="true"></div>
         <div class="detail">
-            <p>Lives: <strong id="lives">3</strong></p>
+            <p>Lives: <strong id="lives">5</strong></p>
             <p>Score: <strong id="score">0</strong></p>
             <p>High Score: <strong id="high-score">0</strong></p>
             <a href="#passport">My Passport <span aria-hidden="true">↓</span></a>
         </div>
         <h1>FlagRover Expedition</h1>
         <div class="expedition-picker">
-            <label for="continent-select">Choose a continent
+            <label for="continent-select">Choose an unlocked continent
                 <select id="continent-select"></select>
             </label>
             <button class="start-expedition" id="start-expedition" type="button">Start expedition <span aria-hidden="true">→</span></button>
         </div>
-        <h3 id="question">Choose a continent and start your expedition.</h3>
-        <div class="flag" id="flag" role="img" aria-label="Flag to identify" hidden></div>
-        <div class="guess" id="options" aria-label="Answer options"></div>
-        <p class="game-feedback" id="feedback" aria-live="polite">Each continent has its own trail of country flags.</p>
+        <div class="challenge-layout">
+            <div class="flag" id="flag" role="img" aria-label="Flag to identify" hidden></div>
+            <div class="challenge-answers">
+                <h3 id="question">Choose a continent and start your expedition.</h3>
+                <div class="guess" id="options" aria-label="Answer options"></div>
+                <p class="game-feedback" id="feedback" aria-live="polite">Each continent has its own trail of country flags.</p>
+            </div>
+        </div>
     </section>
 
     <section class="passport" id="passport">
@@ -78,6 +88,8 @@
 
         <div class="tags" id="stamps" aria-live="polite"></div>
     </section>
+    </main>
+    <script src="js/flags-data.js"></script>
     <script src="js/script.js"></script>
 </body>
 

@@ -1,28 +1,64 @@
-/* Shared navigation used by the Home, About, and Contact pages. */
+/* Shared navigation used across every page. */
+body {
+    margin: 0;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::selection {
+    background: #c9ada7;
+    color: #22223b;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a33;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4e69;
+    border: 2px solid #1a1a33;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9a8c98;
+}
+
 .site-header {
-    width: min(1440px, 100%);
+    width: min(1440px, 87vw);
+    box-sizing: border-box;
     min-height: 68px;
-    margin-inline: auto;
-    padding: .9rem 0;
+    margin: 1rem auto 0;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    border-bottom: 1px solid rgba(148, 163, 184, .17);
-    box-shadow: none;
-    position: relative;
-    z-index: 5;
+    gap: 24px;
+    border: 1px solid rgba(201, 173, 167, .18);
+    border-radius: 14px;
+    background: rgba(26, 26, 51, .84);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+    backdrop-filter: blur(12px);
+    position: static;
+    isolation: isolate;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .site-brand {
     display: inline-flex;
     align-items: center;
-    gap: .65rem;
-    color: #f8fafc;
+    gap: 10px;
+    color: #f2e9e4;
     text-decoration: none;
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: -.04em;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.01em;
     white-space: nowrap;
 }
 
@@ -32,42 +68,41 @@
     object-fit: contain;
 }
 
-.site-brand > span > span { color: #38bdf8; }
+.site-brand > span > span { color: #c9ada7; }
 
 .site-links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: clamp(1.25rem, 3vw, 2.5rem);
+    gap: clamp(20px, 3vw, 40px);
 }
 
 .site-links a {
     position: relative;
-    color: #94a3b8;
+    color: #9a8c98;
     text-decoration: none;
-    font-size: .9rem;
+    font-size: 14px;
     font-weight: 600;
     transition: color .2s ease;
 }
 
 .site-links a:hover,
-.site-links a[aria-current="page"] { color: #f8fafc; }
+.site-links a[aria-current="page"] { color: #f2e9e4; }
 
 .site-links a[aria-current="page"]::after {
     content: "";
     position: absolute;
     right: 0;
-    bottom: -1.35rem;
+    bottom: -22px;
     left: 0;
     height: 2px;
-    background: #38bdf8;
+    background: #c9ada7;
 }
 
 @media (max-width: 560px) {
-    .site-header { min-height: 62px; gap: .7rem; }
-    .site-brand { gap: .45rem; font-size: 1rem; }
-    .site-brand img { width: 31px; height: 31px; }
-    .site-links { gap: .9rem; }
-    .site-links a { font-size: .8rem; }
-    .site-links a[aria-current="page"]::after { bottom: -1.15rem; }
+    .site-header { min-height: 62px; gap: 11px; padding-inline: 13px; }
+    .site-brand { font-size: 16px; }
+    .site-links { gap: 14px; }
+    .site-links a { font-size: 13px; }
+    .site-links a[aria-current="page"]::after { bottom: -18px; }
 }
