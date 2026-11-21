@@ -145,12 +145,16 @@ function renderStamps() {
 
 function isContinentComplete(continent) {
   // A continent is complete only after every country has a passport stamp.
-  return continentCountries[continent].every(([, code]) => stamps.includes(code));
+  return continentCountries[continent].every(([, code]) =>
+    stamps.includes(code),
+  );
 }
 
 function firstIncompleteContinent() {
   // Find the next continent in the progression that still has flags to collect.
-  return continentOrder.find((continent) => !isContinentComplete(continent)) || null;
+  return (
+    continentOrder.find((continent) => !isContinentComplete(continent)) || null
+  );
 }
 
 function renderContinentOptions() {
@@ -159,8 +163,11 @@ function renderContinentOptions() {
   [...continentSelect.options].forEach((option) => {
     const index = continentOrder.indexOf(option.value);
     // Asia is first, so it has no previous continent to complete.
-    option.disabled = index > 0 && !isContinentComplete(continentOrder[index - 1]);
-    option.textContent = option.disabled ? `${option.value} (Locked)` : option.value;
+    option.disabled =
+      index > 0 && !isContinentComplete(continentOrder[index - 1]);
+    option.textContent = option.disabled
+      ? `${option.value} (Locked)`
+      : option.value;
   });
   if (firstIncomplete && continentSelect.selectedOptions[0]?.disabled) {
     selectedContinent = firstIncomplete;
@@ -275,7 +282,8 @@ function chooseAnswer(country, selectedButton) {
 function showAnswerEffect(mood) {
   // Restart the matching celebration or disappointment animation for each answer.
   answerEffect.className = "answer-effect";
-  answerEffect.textContent = mood === "cheer" ? "🎉 Great job! ✨" : "😞 Oops! Try again";
+  answerEffect.textContent =
+    mood === "cheer" ? "🎉 Great job! ✨" : "😞 Oops! Try again";
   void answerEffect.offsetWidth;
   answerEffect.classList.add(`is-${mood}`);
 }
@@ -285,7 +293,9 @@ function pauseAfterLostLife() {
   answerLocked = true;
   continentSelect.disabled = true;
   startButton.disabled = true;
-  optionsDisplay.querySelectorAll("button").forEach((button) => { button.disabled = true; });
+  optionsDisplay.querySelectorAll("button").forEach((button) => {
+    button.disabled = true;
+  });
   window.clearTimeout(feedbackTimer);
   window.clearInterval(countdownTimer);
   // Use a target time so the countdown stays accurate if a timer tick is delayed.
